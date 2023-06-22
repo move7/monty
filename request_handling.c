@@ -1,0 +1,40 @@
+
+#include "monty.h"
+/**
+* execute - executes the opcode
+* @data: data line
+* Return: 0 for success otherwise 1
+*/
+
+int execute(data_t *data)
+{
+	unsigned int i = 0;
+	stack_t *stack;
+	instruction_t opst[] = {
+				{"push", _push},
+				{"pall", _pall},
+				{NULL, NULL}
+				};
+
+	stack = (stack_t *) malloc(sizeof(stack_t));
+	if (stack == NULL)
+	{
+		printf("Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	if (data->argv)
+		stack->n = atoi(data->argv);
+	stack->prev = NULL;
+	stack->next = NULL;
+	for (i = 0; opst[i].opcode != NULL; i++)
+	{
+		if (strcmp(data->opcode, opst[i].opcode) == 0)
+		{
+			opst[i].f(&stack, data->number);
+			return (0);
+		}
+	}
+	fprintf(stderr, "L%d: unknown instruction %s\n", data->number, data->opcode);
+	return (1);
+}
+
