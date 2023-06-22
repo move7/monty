@@ -41,6 +41,6 @@ void freeAll(data_t *data, FILE **file)
 {
 	freeData(data);
 	freeStack();
-	fclose(file);
+	fclose(*file);
 }
 

@@ -43,11 +43,11 @@ int main(int argc, char *argv[])
 		statut = execute(data);
 		if (statut == 1)
 		{
-			freeAll(data, file);
+			freeAll(data, &file);
 			exit(EXIT_FAILURE);
 		}
 	} while (line_read > 0);
-	freeAll(data, file);
+	freeAll(data, &file);
 	return (0);
 }
 
