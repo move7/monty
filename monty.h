@@ -60,8 +60,11 @@ typedef struct data_t
 
 /*------tools.c*/
 void data_init(data_t *data, unsigned int number);
-void freeData(data_t *data);
 
+/*-------------------free.c*/
+void freeData(data_t *data);
+void freeStack(void);
+void freeAll(data_t *data, FILE **file);
 /*-----request_handelin.c*/
 int execute(data_t *data);
 /*----------file_handling.c*/
