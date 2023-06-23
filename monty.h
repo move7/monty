@@ -72,7 +72,7 @@ FILE *f_open(char *name);
 /*--------data_checker.c*/
 int is_valid_number(const char *str);
 int arg_checker(data_t *data);
-
+int is_empty_line(char *str);
 /*----------push.c */
 void _push(stack_t **head,
 		unsigned int __attribute((unused)) line_number);

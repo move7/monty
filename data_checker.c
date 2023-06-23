@@ -35,3 +35,19 @@ int arg_checker(data_t *data)
 	}
 	return	(0);
 }
+/**
+ * is_empty_line - check if line is empty
+ * @str: line
+ * Return: 0 for success otherwise 1
+ */
+int is_empty_line(char *str)
+{
+	size_t i;
+
+	for (i = 0; i < strlen(str); i++)
+	{
+		if (!isspace(str[i]))
+			return (0);
+	}
+	return (1);
+}

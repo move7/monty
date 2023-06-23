@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	while ((line_read = getline(&buffer, &nread, file)) != -1)
 	{
 		buffer[strcspn(buffer, "\n")] = '\0';
-		if (strlen(buffer) == 0)
+		if ((strlen(buffer) == 0) || (is_empty_line(buffer) == 1))
 			continue;
 		data_init(data, line_number++);
 		data->line = (char *)malloc((strlen(buffer) + 1) * sizeof(char));
