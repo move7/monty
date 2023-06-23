@@ -30,8 +30,10 @@ int execute(data_t *data)
 	{
 		if (strcmp(data->opcode, opst[i].opcode) == 0)
 		{
-			if (arg_checker(data) == 1)
-				return (1);
+		/*
+		 *	if (arg_checker(data) == 1)
+		 *	return (1);
+		*/
 			opst[i].f(&stack, data->number);
 			return (0);
 		}
