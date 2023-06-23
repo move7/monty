@@ -7,9 +7,11 @@
  */
 int is_valid_number(const char *str)
 {
+	size_t i;
+
 	if (str[0] == '\0')
 		return (1);
-	for (size_t i = 0; i < strlen(str); i++)
+	for (i = 0; i < strlen(str); i++)
 	{
 		if (isdigit(str[i]))
 			return (0);
