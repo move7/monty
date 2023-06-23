@@ -45,6 +45,18 @@ int arg_checker(data_t *data)
 				return (1);
 			}
 		}
+		else
+		{
+			if(strcmp(data->opcode, "pop") == 0)
+			{
+				if(!header)
+				{
+					fprintf(stderr, "L%d: can't pop an empty stack\n", data->number);
+					return (1);
+				}
+
+			}
+		}
 	}
 	return	(0);
 }

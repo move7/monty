@@ -76,10 +76,12 @@ int is_empty_line(char *str);
 /*----------push.c */
 void _push(stack_t **head,
 		unsigned int __attribute((unused)) line_number);
-/*----------pall.c*/
+/*----------pall.c---*/
 void _pall(__attribute((unused)) stack_t **stack,
 		__attribute((unused)) unsigned int line_number);
 void _pint(__attribute((unused)) stack_t **stack,
+		__attribute((unused)) unsigned int line_number);
+void _pop(__attribute((unused)) stack_t **stack,
 		__attribute((unused)) unsigned int line_number);
 #endif
 
