@@ -69,6 +69,9 @@ void freeAll(data_t *data, FILE **file);
 int execute(data_t *data);
 /*----------file_handling.c*/
 FILE *f_open(char *name);
+/*--------data_checker.c*/
+int is_valid_number(const char *str);
+int arg_checker(data_t *data);
 
 /*----------push.c */
 void _push(stack_t **head,
