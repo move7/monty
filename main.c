@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
 	FILE *file;
 	data_t *data = NULL;
 	char *buffer = NULL;
-	size_t line_read, nread = 0;
+	size_t nread = 0;
+	ssize_t line_read;
 	unsigned int line_number = 1;
 	int statut;
 
@@ -32,8 +33,11 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Failed to allocate memory for data\n");
 		exit(EXIT_FAILURE);
 	}
-	do {
-		line_read = getline(&buffer, &nread, file);
+	while ((line_read = getline(&buffer, &nread, file)) != -1)
+	{
+		buffer[strcspn(buffer, "\n")] = '\0';
+		if (strlen(buffer) == 0)
+			continue;
 		data_init(data, line_number++);
 		data->line = (char *)malloc((strlen(buffer) + 1) * sizeof(char));
 		strcpy(data->line, buffer);
@@ -46,7 +50,7 @@ int main(int argc, char *argv[])
 			freeAll(data, &file);
 			exit(EXIT_FAILURE);
 		}
-	} while (line_read > 0);
+	}
 	freeAll(data, &file);
 	return (0);
 }
