@@ -27,7 +27,7 @@ int arg_checker(data_t *data)
 {
 	if (strcmp(data->opcode, "push") == 0)
 	{
-		if (is_valid_number(data->argv) == 1)
+		if (!data->argv || (is_valid_number(data->argv) == 1))
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", data->number);
 			return (1);
