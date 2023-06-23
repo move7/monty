@@ -46,8 +46,6 @@ int main(int argc, char *argv[])
 			freeAll(data, &file);
 			exit(EXIT_FAILURE);
 		}
-		free(buffer);
-		buffer = NULL;
 	} while (line_read > 0);
 	freeAll(data, &file);
 	return (0);
