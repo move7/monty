@@ -6,7 +6,7 @@
  * Return: no return
 */
 void _push(stack_t **stack,
-		unsigned int __attribute__((__unused__)) line_number)
+		__attribute((unused)) unsigned int line_number)
 {
 	if (header)
 	{

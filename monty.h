@@ -72,7 +72,7 @@ FILE *f_open(char *name);
 
 /*----------push.c */
 void _push(stack_t **head,
-		unsigned int __attribute__((__unused__)) line_number);
+		unsigned int __attribute((unused)) line_number);
 /*----------pall.c*/
 void _pall(__attribute((unused)) stack_t **stack,
 		__attribute((unused)) unsigned int line_number);
