@@ -35,6 +35,17 @@ int arg_checker(data_t *data)
 			return (1);
 		}
 	}
+	else
+	{
+		if (strcmp(data->opcode, "pint") == 0)
+		{
+			if (!header)
+			{
+				fprintf(stderr, "L%u: can't pint, stack empty\n", data->number);
+				return (1);
+			}
+		}
+	}
 	return	(0);
 }
 /**

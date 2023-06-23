@@ -13,6 +13,7 @@ int execute(data_t *data)
 	instruction_t opst[] = {
 				{"push", _push},
 				{"pall", _pall},
+				{"pint", _pint},
 				{NULL, NULL}
 				};
 
