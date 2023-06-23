@@ -13,10 +13,10 @@ int is_valid_number(const char *str)
 		return (1);
 	for (i = 0; i < strlen(str); i++)
 	{
-		if (isdigit(str[i]))
-			return (0);
+		if (!isdigit(str[i]))
+			return (1);
 	}
-	return (1);
+	return (0);
 }
 /**
  * arg_checker - check if arguments are valid
