@@ -35,23 +35,23 @@ int main(int argc, char *argv[])
 	}
 	while ((line_read = getline(&buffer, &nread, file)) != -1)
 	{
+		line_number++;
 		buffer[strcspn(buffer, "\n")] = '\0';
 		if ((strlen(buffer) == 0) || (is_empty_line(buffer) == 1))
 			continue;
-		data_init(data, line_number++);
-		data->line = (char *)malloc((strlen(buffer) + 1) * sizeof(char));
-		strcpy(data->line, buffer);
+		data_init(data, line_number);
+		data->line = buffer;
 		data->opcode = strtok(buffer, SEPARATORS);
 		if (data->opcode)
 		data->argv = strtok(NULL, SEPARATORS);
 		statut = execute(data);
 		if (statut == 1)
-		{
-			freeAll(data, &file);
-			exit(EXIT_FAILURE);
-		}
+			break;
 	}
+	/*free(buffer);*/
 	freeAll(data, &file);
+	if (statut == 1)
+		exit(EXIT_FAILURE);
 	return (0);
 }
 

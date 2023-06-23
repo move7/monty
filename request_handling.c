@@ -16,22 +16,22 @@ int execute(data_t *data)
 				{NULL, NULL}
 				};
 
-	stack = (stack_t *) malloc(sizeof(stack_t));
-	if (stack == NULL)
-	{
-		printf("Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-	if (data->argv)
-		stack->n = atoi(data->argv);
-	stack->prev = NULL;
-	stack->next = NULL;
 	for (i = 0; opst[i].opcode != NULL; i++)
 	{
 		if (strcmp(data->opcode, opst[i].opcode) == 0)
 		{
 			if (arg_checker(data) == 1)
 				return (1);
+			stack = (stack_t *) malloc(sizeof(stack_t));
+			if (stack == NULL)
+			{
+				printf("Error: malloc failed\n");
+				exit(EXIT_FAILURE);
+			}
+			if (data->argv)
+				stack->n = atoi(data->argv);
+			stack->prev = NULL;
+			stack->next = NULL;
 			opst[i].f(&stack, data->number);
 			return (0);
 		}

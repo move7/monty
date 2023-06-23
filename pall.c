@@ -17,4 +17,5 @@ void _pall(__attribute((unused)) stack_t **stack,
 		printf("%d\n", tmp->n);
 		tmp = tmp->next;
 	}
+	free(*stack);
 }

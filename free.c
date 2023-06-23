@@ -6,8 +6,11 @@
  */
 void freeData(data_t *data)
 {
-	free(data->line);
+	/*free(data->line);*/
 	free(data->opcode);
+	free(data);
+	/*if (data->argv)*/
+		/*free(data->argv);*/
 	data->line = NULL;
 	data->argv = NULL;
 	data->opcode = NULL;
