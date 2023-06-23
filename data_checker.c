@@ -13,6 +13,8 @@ int is_valid_number(const char *str)
 		return (1);
 	for (i = 0; i < strlen(str); i++)
 	{
+		if (i == 0 && str[i] == '-')
+			continue;
 		if (!isdigit(str[i]))
 			return (1);
 	}
