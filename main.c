@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	char *buffer = NULL;
 	size_t nread = 0;
 	ssize_t line_read;
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 	int statut;
 
 	if (argc != 2)
