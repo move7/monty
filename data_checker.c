@@ -87,6 +87,36 @@ int arg_checker(data_t *data)
 								return (1);
 							}
 						}
+						else
+						{
+							if (strcmp(data->opcode, "div") == 0)
+							{
+								if (stackLen(header) < 2)
+								{
+									fprintf(stderr, "L%d: can't div, stack too short\n", data->number);
+									return (1);
+								}
+								else
+								{
+									if (header->n == 0)
+									{
+										fprintf(stderr, "L%d: division by zero\n", data->number);
+										return (1);
+									}
+								}
+							}
+							else
+							{
+								if (strcmp(data->opcode, "mul") == 0)
+								{
+									if (stackLen(header) < 2)
+									{
+										fprintf(stderr, "L%d: can't mul, stack too short\n", data->number);
+										return (1);
+									}
+								}
+							}
+						}
 					}
 				}
 			}

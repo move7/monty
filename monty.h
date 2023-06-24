@@ -91,5 +91,9 @@ void _add(__attribute((unused)) stack_t **stack,
                 __attribute((unused)) unsigned int line_number);
 void _sub(__attribute((unused)) stack_t **stack,
                 __attribute((unused)) unsigned int line_number);
+void _div(__attribute((unused)) stack_t **stack,
+                __attribute((unused)) unsigned int line_number);
+void _mul(__attribute((unused)) stack_t **stack,
+                __attribute((unused)) unsigned int line_number);
 #endif
 

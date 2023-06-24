@@ -19,6 +19,8 @@ int execute(data_t *data)
 				{"nop", _nop},
 				{"add", _add},
 				{"sub", _sub},
+				{"div", _div},
+				{"mul", _mul},
 				{NULL, NULL}
 				};
 
