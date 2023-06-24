@@ -16,4 +16,5 @@ void _swap(__attribute((unused)) stack_t **stack,
 	temp = current->n;
 	current->n = current_next->n;
 	current_next->n = temp;
+	free(*stack);
 }
