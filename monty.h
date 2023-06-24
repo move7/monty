@@ -60,7 +60,7 @@ typedef struct data_t
 
 /*------tools.c*/
 void data_init(data_t *data, unsigned int number);
-
+int stackLen(stack_t *stack);
 /*-------------------free.c*/
 void freeData(data_t *data);
 void freeStack(void);
@@ -82,6 +82,8 @@ void _pall(__attribute((unused)) stack_t **stack,
 void _pint(__attribute((unused)) stack_t **stack,
 		__attribute((unused)) unsigned int line_number);
 void _pop(__attribute((unused)) stack_t **stack,
+		__attribute((unused)) unsigned int line_number);
+void _swap(__attribute((unused)) stack_t **stack,
 		__attribute((unused)) unsigned int line_number);
 #endif
 

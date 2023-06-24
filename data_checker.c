@@ -47,14 +47,26 @@ int arg_checker(data_t *data)
 		}
 		else
 		{
-			if(strcmp(data->opcode, "pop") == 0)
+			if (strcmp(data->opcode, "pop") == 0)
 			{
-				if(!header)
+				if (!header)
 				{
 					fprintf(stderr, "L%d: can't pop an empty stack\n", data->number);
 					return (1);
 				}
 
+			}
+			else
+			{
+				if (strcmp(data->opcode, "swap") == 0)
+				{
+					if (stackLen(header) < 2)
+					{
+						fprintf(stderr, "L%d: can't swap, stack too short\n", data->number);
+						return (1);
+					}
+
+				}
 			}
 		}
 	}
