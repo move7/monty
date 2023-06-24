@@ -67,6 +67,17 @@ int arg_checker(data_t *data)
 					}
 
 				}
+				else
+				{
+					if (strcmp(data->opcode, "add") == 0)
+					{
+						if (stackLen(header) < 2)
+						{
+							fprintf(stderr, "L%d: can't add, stack too short\n", data->number);
+							return (1);
+						}
+					}
+				}
 			}
 		}
 	}

@@ -17,6 +17,7 @@ int execute(data_t *data)
 				{"pop", _pop},
 				{"swap", _swap},
 				{"nop", _nop},
+				{"add", _add},
 				{NULL, NULL}
 				};
 
