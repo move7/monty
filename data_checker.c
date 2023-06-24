@@ -138,6 +138,22 @@ int arg_checker(data_t *data)
 			}
 		}
 	}
+	if (strcmp(data->opcode, "pchar") == 0)
+	{
+		if (!header)
+		{
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", data->number);
+			return (1);
+		}
+		else
+		{
+			if (header->n > 127 || header->n < 0)
+			{
+				fprintf(stderr, "L%d: can't pchar, value out of range\n", data->number);
+				return (1);
+			}
+		}
+	}
 	return	(0);
 }
 /**
