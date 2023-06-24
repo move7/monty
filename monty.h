@@ -89,5 +89,7 @@ void _nop(__attribute((unused)) stack_t **stack,
 		__attribute((unused)) unsigned int line_number);
 void _add(__attribute((unused)) stack_t **stack,
                 __attribute((unused)) unsigned int line_number);
+void _sub(__attribute((unused)) stack_t **stack,
+                __attribute((unused)) unsigned int line_number);
 #endif
 

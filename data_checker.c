@@ -77,6 +77,17 @@ int arg_checker(data_t *data)
 							return (1);
 						}
 					}
+					else
+					{
+						if (strcmp(data->opcode, "sub") == 0)
+						{
+							if (stackLen(header) < 2)
+							{
+								fprintf(stderr, "L%d: can't sub, stack too short\n", data->number);
+								return (1);
+							}
+						}
+					}
 				}
 			}
 		}
