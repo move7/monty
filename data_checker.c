@@ -122,6 +122,22 @@ int arg_checker(data_t *data)
 			}
 		}
 	}
+	if (strcmp(data->opcode, "mod") == 0)
+	{
+		if (stackLen(header) < 2)
+		{
+			fprintf(stderr, "L%d: can't mod, stack too short\n", data->number);
+			return (1);
+		}
+		else
+		{
+			if (header->n == 0)
+			{
+				fprintf(stderr, "L%d: division by zero\n", data->number);
+				return (1);
+			}
+		}
+	}
 	return	(0);
 }
 /**
@@ -135,6 +151,8 @@ int is_empty_line(char *str)
 
 	for (i = 0; i < strlen(str); i++)
 	{
+		if (str[i] == '#')
+			return (1);
 		if (!isspace(str[i]))
 			return (0);
 	}
