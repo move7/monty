@@ -13,4 +13,5 @@ void _pop(__attribute((unused)) stack_t **stack,
 	current = header;
 	header = current->next;
 	free(current);
+	free(*stack);
 }
