@@ -24,6 +24,8 @@ int execute(data_t *data)
 				{"mod", _mod},
 				{"pchar", _pchar},
 				{"pstr", _pstr},
+				{"rotl", _rotl},
+				{"rotr", _rotr},
 				{NULL, NULL}
 				};
 

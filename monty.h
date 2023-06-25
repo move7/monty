@@ -101,5 +101,9 @@ void _pchar(__attribute((unused)) stack_t **stack,
                 __attribute((unused)) unsigned int line_number);
 void _pstr(__attribute((unused)) stack_t **stack,
                 __attribute((unused)) unsigned int line_number);
+void _rotl(__attribute((unused)) stack_t **stack,
+                __attribute((unused)) unsigned int line_number);
+void _rotr(__attribute((unused)) stack_t **stack,
+                __attribute((unused)) unsigned int line_number);
 #endif
 
