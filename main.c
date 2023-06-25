@@ -38,7 +38,10 @@ int main(int argc, char *argv[])
 		line_number++;
 		buffer[strcspn(buffer, "\n")] = '\0';
 		if ((strlen(buffer) == 0) || (is_empty_line(buffer) == 1))
+		{
+			data->line = buffer;
 			continue;
+		}
 		data_init(data, line_number);
 		data->line = buffer;
 		data->opcode = strtok(buffer, SEPARATORS);
