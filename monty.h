@@ -56,6 +56,7 @@ typedef struct data_t
 	unsigned int number;
 	char *argv;
 	char *opcode;
+	int queue;
 } data_t;
 
 /*------tools.c*/
@@ -104,6 +105,8 @@ void _pstr(__attribute((unused)) stack_t **stack,
 void _rotl(__attribute((unused)) stack_t **stack,
                 __attribute((unused)) unsigned int line_number);
 void _rotr(__attribute((unused)) stack_t **stack,
+                __attribute((unused)) unsigned int line_number);
+void _rotl2(__attribute((unused)) stack_t **stack,
                 __attribute((unused)) unsigned int line_number);
 #endif
 

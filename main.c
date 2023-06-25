@@ -39,12 +39,17 @@ int main(int argc, char *argv[])
 		buffer[strcspn(buffer, "\n")] = '\0';
 		if ((strlen(buffer) == 0) || (is_empty_line(buffer) == 1))
 		{
-			data->line = buffer;
+			free(buffer);
 			continue;
 		}
 		data_init(data, line_number);
 		data->line = buffer;
 		data->opcode = strtok(buffer, SEPARATORS);
+		if (strcmp(data->opcode, "queue") == 0 || strcmp(data->opcode, "stack") == 0)
+		{
+			data->queue = (strcmp(data->opcode, "queue") == 0)? 1 : 0;
+			continue;
+		}
 		if (data->opcode)
 		data->argv = strtok(NULL, SEPARATORS);
 		statut = execute(data);
