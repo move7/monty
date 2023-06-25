@@ -17,7 +17,7 @@ void _pstr(__attribute((unused)) stack_t **stack,
 	{
 		if (tmp->n > 127 || tmp->n <= 0)
 			break;
-		printf("%c\n", tmp->n);
+		printf("%c", tmp->n);
 		tmp = tmp->next;
 	}
 	printf("\n");
