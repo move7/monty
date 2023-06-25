@@ -46,7 +46,7 @@ int execute(data_t *data)
 			stack->prev = NULL;
 			stack->next = NULL;
 			opst[i].f(&stack, data->number);
-			if(data->queue == 1)
+			if(data->queue == 1 && (strcmp(data->opcode, "push") == 0))
 				_rotl2(&stack, data->number);
 			return (0);
 		}
