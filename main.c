@@ -37,13 +37,10 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		buffer[strcspn(buffer, "\n")] = '\0';
-		if ((strlen(buffer) == 0) || (is_empty_line(buffer) == 1))
-		{
-			free(buffer);
-			continue;
-		}
 		data_init(data, line_number);
 		data->line = buffer;
+		if ((strlen(buffer) == 0) || (is_empty_line(buffer) == 1))
+			continue;
 		data->opcode = strtok(buffer, SEPARATORS);
 		if (strcmp(data->opcode, "queue") == 0 || strcmp(data->opcode, "stack") == 0)
 		{
